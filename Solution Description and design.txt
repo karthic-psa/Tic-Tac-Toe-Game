@@ -1,0 +1,43 @@
+Programming language used: JAVA
+
+Design:
+In the class ‘TicTacToe’
+
+1.) We import the required libraries:
+•Java.util.scanner
+
+2) Main method:
+•Initialize the integer variables ‘Attempt’, ‘insertion’, ‘validinputs’, ‘InsertionsLeft’.
+•Prompt the user to input the board size. These variables are used by the method ‘boardlayout’. 
+•Then, prompt the user to input the difficulty level. The difficulty value is used by ‘ComputerInsertion’ method.Here, press 0 to exit the game.
+•Verify if the size of the board is zero, which is not valid and if the size is 1 then the one who enters the first insertion will be the winner.
+•User inserts first I every odd game and the insertions are decided by calculating whether the next insertion attempt is going to be odd or even. If odd user gets the chance or else computer gets the chance. This order reverses for every game. 
+
+3)BoardCreation class:
+•This class contains the method ‘boarelayout’.
+•After when the user enters the size of the board, an object ‘bl’ of the class ‘BoardCreation’ is created which displays the initial layout of the board indicating the row and column numbers. 
+•Whenever an insertion is made the object ‘bl’ makes use if the position values and creates a new layout with the insertion made in the specific position.
+
+4) Winner Class:
+•A public class Winner is defined which first checks whether the game is over or not and then the ‘DecideWinner’ method in it returns the Boolean value “gameover”.
+•An object of the class Winner is created and called each time an insertion is made which decides whether the game is over or not in that particular move. 
+•Each row, column and diagonal is checked to see if the game is over. If finished then it returns a Boolean value. 
+•If ‘gameover’ is returned as true, then the main function calculates who made the last insertion and then decides the winner based on the last insertion.
+
+5)InsertSymbol Class:
+•Based on the difficulty level the computer insertion is decided.
+•All the computations are carried out in the ‘InsertSymbol’ class by the ComputerInsertion method. 
+•The method ‘ComputerInsertion’ calculates the insertion position based on the difficulty level selected by the user as follows,
+Level 1:
+The computer randomly decides the place of insertion. It makes the user easy to win the game.
+Level 2:
+The computer checks if it can win the next move. If it cannot win in the next move it inserts in a random position.
+Level 3:
+The computer checks if it can win in the next move and places the symbol in a calculated position every time Without using any random allotment. Thus making it harder for the user to win the game. 
+Thus the insertions are made by the computer and winner is decided.
+
+6) Reset Function:
+•Once the winner is decided or the user prompts to start a new game the method restart is called from the object w of the winner class. 
+•This method clears all the insertions made by the user and the computer and then the object ‘bl’ of the class displays a new layout.
+
+
